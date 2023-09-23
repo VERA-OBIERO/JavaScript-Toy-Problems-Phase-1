@@ -1,5 +1,5 @@
 ## Phase 1 Week 1 Code Challenge : TOY PROBLEMS
-This repository contains three solutions to three challenges.
+This repository contains three solutions to three challenges which have been written in JavaScript.
 
 ## Author
 -Vera O.
@@ -20,10 +20,8 @@ Write a program that takes the speed of a car as input e.g 80. If the speed is l
 
 Write a program whose major task is to calculate an individual’s Net Salary by getting the inputs of basic salary and benefits. Calculate the payee (i.e. Tax), NHIF Deductions, NSSF Deductions, gross salary, and net salary. 
 
-NB: Use KRA, NHIF, and NSSF values provided in the link below.
+NB: Use KRA, NHIF, and NSSF values provided in the links below.
 
-- https://www.aren.co.ke/payroll/taxrates.htm Links to an external site.
+- https://www.aren.co.ke/payroll/taxrates.htm 
 
-Links to an external site.-  Links to an external site.Links to an external site.
-
-- www.kra.go.ke/en/individual/calculate-tax/calculating-tax/payeLinks to an external site.
+- www.kra.go.ke/en/individual/calculate-tax/calculating-tax/paye
