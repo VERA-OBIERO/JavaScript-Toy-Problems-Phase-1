@@ -26,7 +26,7 @@ function calculateStudentGrade() {
     console.log (`The student's grade is ${grade}`);
    } else {
     
-    // if input is invalid dislay the following
+    // if input is invalid display the following
     console.log(`Please enter a number between 0 and 100.`);
   }
 }
