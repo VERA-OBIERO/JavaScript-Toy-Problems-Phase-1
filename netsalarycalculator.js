@@ -26,16 +26,16 @@
     taxablePay = basicSalary - NSSF;
 
     //PAYE Calculator
-    if (taxablePay > 800000){
-        PAYE = 0.35 * taxablePay
-    }else if (taxablePay > 500000){
-        PAYE = 0.325 * taxablePay
-    }else if (taxablePay > 32333){
-        PAYE = 0.3 * taxablePay
-    }else if (taxablePay > 24000){
-        PAYE = 0.25 * taxablePay
+    if (taxablePay <= 24000){
+        PAYE = 0;
+    }else if (taxablePay > 24000 && taxablePay <= 32333){
+        PAYE = (0.1*24000) + (0.25 * (taxablePay-24000));
+    }else if (taxablePay > 32333 && taxablePay <= 500000){
+        PAYE = (0.1*24000) + (0.25*8333) + (0.3*(taxablePay-32333));
+    }else if (taxablePay > 500000 && taxablePay <= 800000){
+        PAYE = (0.1*24000) + (0.25*8333) + (0.3*467667) + (0.325*(taxablePay-500000));
     }else {
-        PAYE = 0
+        PAYE = (0.1*24000) + (0.25*8333) + (0.3*467667) + (0.325*800000) + (0.35*(taxablePay-800000));
     }
 
     //NHIF Calculator based on basic salary
@@ -75,21 +75,31 @@
     }else {
         NHIF = 150;
     }
+    //calculate Tax relief on PAYE which is 15% of insurance relief(including NHIF) up to 5000
+    var relief;
+    relief = 0.15 * NHIF;
 
+    //PAYE to be deducted after reliefs
+    const personalRelief = 2400;
+    var newPAYE;
+    newPAYE = PAYE - (personalRelief + relief)
+    
     //Housing Levy Calculator based on basic salary
     var housingLevy;
     housingLevy = 0.015 * basicSalary;
 
     //calculate deductions
     var deductions;
-    deductions = PAYE + housingLevy + NHIF;
+    deductions = newPAYE + housingLevy + NHIF;
 
     //calculate Net Salary
     var netSalary;
     netSalary = basicSalary - deductions;
 
     //Display the net Salary
-    console.log(`Your Net Salary is ${netSalary}`)
+    console.log(`Your Gross Salary is ${basicSalary}\n
+    Deductions: PAYE = ${newPAYE}, NHIF = ${NHIF}, NSSF = ${NSSF}, Housing Levy = ${housingLevy}\n
+    The Net Salary is ${netSalary}`)
  }
  //Call the function
  netSalaryCalculator();
