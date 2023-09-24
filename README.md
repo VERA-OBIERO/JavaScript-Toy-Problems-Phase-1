@@ -1,5 +1,5 @@
 ## Phase 1 Week 1 Code Challenge : TOY PROBLEMS
-This repository contains three solutions to three challenges which have been written in JavaScript.
+This repository contains three solutions to three challenges which have been written in JavaScript. To test these solutions, use a JavaScript compiler e.g https://www.programiz.com/javascript/online-compiler/ or the Google console to test the solutions.
 
 ## Author
 -Vera O.
