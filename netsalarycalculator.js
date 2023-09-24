@@ -96,7 +96,12 @@
     //PAYE to be deducted after reliefs
     const personalRelief = 2400;
     var newPAYE;
-    newPAYE = PAYE - (personalRelief + relief)
+    //Add a function to make sure the new PAYE is not a negative number 
+    if (PAYE > (personalRelief + relief)){
+    newPAYE = PAYE - (personalRelief + relief);
+    }else{
+        newPAYE = 0;
+    }
     
     //Housing Levy Calculator based on gross salary
     var housingLevy;
