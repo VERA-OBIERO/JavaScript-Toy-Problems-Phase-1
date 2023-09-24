@@ -111,8 +111,14 @@
     netSalary = taxablePay - deductions;
 
     //Display the net Salary
-    console.log(`Your Gross Salary is ${grossSalary}\n
-    Deductions: PAYE = ${newPAYE}, NHIF = ${NHIF}, NSSF = ${NSSF}, Housing Levy = ${housingLevy}\n
+    console.log(`\n
+    Your Gross Salary is ${grossSalary}\n
+    Deductions: \n
+    PAYE = ${newPAYE}\n
+    NHIF = ${NHIF}\n
+    NSSF = ${NSSF}\n
+    Housing Levy = ${housingLevy}\n
+    Pension Contribution = ${contributionBenefit}\n
     The Net Salary is ${netSalary}`)
  }
  //Call the function
