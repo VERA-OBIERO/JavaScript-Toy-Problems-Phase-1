@@ -32,7 +32,7 @@
     }else if (grossSalary >= 3000){
         NSSF = 180;
     }else {
-        NSSF = 0;
+        NSSF = 0.06 * grossSalary;
     }
     
     //Calculate Taxable Pay
