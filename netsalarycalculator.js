@@ -38,9 +38,55 @@
         PAYE = 0
     }
 
+    //NHIF Calculator based on basic salary
+    var NHIF;
+    if (basicSalary > 99999){
+        NHIF = 1700;
+    }else if (basicSalary > 89999){
+        NHIF = 1600;
+    }else if (basicSalary > 79999){
+        NHIF = 1500;
+    }else if (basicSalary > 69999){
+        NHIF = 1400;
+    }else if (basicSalary > 59999){
+        NHIF = 1300;
+    }else if (basicSalary > 49999){
+        NHIF = 1200;
+    }else if (basicSalary > 44999){
+        NHIF = 1100;
+    }else if (basicSalary > 39999){
+        NHIF = 1000;
+    }else if (basicSalary > 34999){
+        NHIF = 950;
+    }else if (basicSalary > 29999){
+        NHIF = 900;
+    }else if (basicSalary > 24999){
+        NHIF = 850;
+    }else if (basicSalary > 19999){
+        NHIF = 750;
+    }else if (basicSalary > 14999){
+        NHIF = 600;
+    }else if (basicSalary > 11999){
+        NHIF = 500;
+    }else if (basicSalary > 7999){
+        NHIF = 400;
+    }else if (basicSalary > 5999){
+        NHIF = 300;
+    }else {
+        NHIF = 150;
+    }
+
+    //Housing Levy Calculator based on basic salary
+    var housingLevy;
+    housingLevy = 0.015 * basicSalary;
+
+    //calculate deductions
+    var deductions;
+    deductions = PAYE + housingLevy + NHIF;
+
     //calculate Net Salary
     var netSalary;
-    netSalary = basicSalary - PAYE;
+    netSalary = basicSalary - deductions;
 
     //Display the net Salary
     console.log(`Your Net Salary is ${netSalary}`)
